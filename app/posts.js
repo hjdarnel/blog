@@ -3,14 +3,8 @@ import matter from "gray-matter";
 import { Feed } from "feed";
 
 export const metadata = {
-  title: "overreacted",
-  description: "A blog by Dan Abramov",
-  alternates: {
-    types: {
-      "application/atom+xml": "https://overreacted.io/atom.xml",
-      "application/rss+xml": "https://overreacted.io/rss.xml",
-    },
-  },
+  title: "overly-enthusiastic",
+  description: "A blog by Henry darnell",
 };
 
 export async function getPosts() {
@@ -34,12 +28,12 @@ export async function getPosts() {
 
 export async function generateFeed() {
   const posts = await getPosts();
-  const site_url = "https://overreacted.io/";
+  const site_url = "https://blog.darnell.io/";
 
   const feedOptions = {
     author: {
-      name: "Dan Abramov",
-      email: "dan.abramov@gmail.com",
+      name: "Henry Darnell",
+      email: "hjdarnel",
       link: site_url,
     },
     description: metadata.description,
@@ -47,7 +41,7 @@ export async function generateFeed() {
     feedLinks: { atom: `${site_url}atom.xml`, rss: `${site_url}rss.xml` },
     generator: "Feed for Node.js",
     id: site_url,
-    image: "https://github.com/gaearon.png",
+    image: "https://github.com/hjdarnel.png",
     link: site_url,
     title: metadata.title,
   };

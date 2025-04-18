@@ -28,12 +28,6 @@ export default async function PostPage({ params }) {
   }
   let Wrapper = postComponents.Wrapper ?? Fragment;
   const { content, data } = matter(file);
-  const discussUrl = `https://bsky.app/search?q=${encodeURIComponent(
-    `https://overreacted.io/${slug}/`,
-  )}`;
-  const editUrl = `https://github.com/gaearon/overreacted.io/edit/main/public/${encodeURIComponent(
-    slug,
-  )}/index.md`;
   return (
     <>
       <article>
@@ -53,14 +47,6 @@ export default async function PostPage({ params }) {
           })}
         </p>
         <div className="markdown mt-10">
-          <a
-            href="https://ko-fi.com/gaearon"
-            target="_blank"
-            className="tip tip-sm"
-          >
-            <span className="tip-bg" />
-            Pay what you like
-          </a>
           <Wrapper>
             <MDXRemote
               source={content}
@@ -105,16 +91,6 @@ export default async function PostPage({ params }) {
               }}
             />
           </Wrapper>
-          <a href="https://ko-fi.com/gaearon" target="_blank" className="tip">
-            <span className="tip-bg" />
-            Pay what you like
-          </a>
-          <hr />
-          <p>
-            <Link href={discussUrl}>Discuss on Bluesky</Link>
-            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-            <Link href={editUrl}>Edit on GitHub</Link>
-          </p>
         </div>
       </article>
     </>
@@ -134,7 +110,7 @@ export async function generateMetadata({ params }) {
   const file = await readFile("./public/" + slug + "/index.md", "utf8");
   let { data } = matter(file);
   return {
-    title: data.title + " — overreacted",
+    title: data.title + " — overly-enthusiastic",
     description: data.spoiler,
   };
 }

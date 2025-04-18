@@ -8,21 +8,36 @@ export { metadata };
 export default async function Home() {
   const posts = await getPosts();
   return (
-    <div className="relative -top-[10px] flex flex-col gap-8">
-      {posts.map((post) => (
-        <Link
-          key={post.slug}
-          className="block py-4 hover:scale-[1.005] will-change-transform"
-          href={"/" + post.slug + "/"}
-        >
-          <article>
-            <PostTitle post={post} />
-            <PostMeta post={post} />
-            <PostSubtitle post={post} />
-          </article>
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="pb-10">
+        <p>
+          A technical blog by{" "}
+          <Link
+            className={"border-b-[1px] border-[--link] text-[--link]"}
+            href="https://github.com/hjdarnel"
+          >
+            Henry Darnell
+          </Link>
+          . Sometimes I stay up too late thinking about silly things. I'll write
+          about some of them here.
+        </p>
+      </div>
+      <div className="relative -top-[10px] flex flex-col gap-8">
+        {posts.map((post) => (
+          <Link
+            key={post.slug}
+            className="block py-4 hover:scale-[1.005] will-change-transform"
+            href={"/" + post.slug + "/"}
+          >
+            <article>
+              <PostTitle post={post} />
+              <PostMeta post={post} />
+              <PostSubtitle post={post} />
+            </article>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 }
 
