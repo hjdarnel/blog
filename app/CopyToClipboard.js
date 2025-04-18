@@ -57,7 +57,6 @@ export const CopyToClipboard = ({ children }) => {
           >
             {copied ? (
               <>
-                <title>Copy to Clipboard</title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -67,7 +66,6 @@ export const CopyToClipboard = ({ children }) => {
               </>
             ) : (
               <>
-                <title>Copy to Clipboard</title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
