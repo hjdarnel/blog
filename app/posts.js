@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { Feed } from "feed";
 
 export const metadata = {
-  title: "overly-enthusiastic",
+  title: "overly enthusiastic - henry darnell",
   description: "A blog by Henry darnell",
 };
 

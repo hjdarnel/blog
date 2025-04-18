@@ -110,7 +110,7 @@ export async function generateMetadata({ params }) {
   const file = await readFile("./public/" + slug + "/index.md", "utf8");
   let { data } = matter(file);
   return {
-    title: data.title + " — overly-enthusiastic",
+    title: data.title + " — overly enthusiastic",
     description: data.spoiler,
   };
 }
