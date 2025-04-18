@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Link from "../Link";
 import { sans } from "../fonts";
+import { PreWithClipboard, CodeWithClipboard } from "../CopyToClipboard";
 import remarkSmartpants from "remark-smartypants";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
@@ -59,6 +60,7 @@ export default async function PostPage({ params }) {
                   }
                   return <img src={src} {...rest} />;
                 },
+                pre: PreWithClipboard,
                 ...postComponents,
               }}
               options={{

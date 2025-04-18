@@ -20,7 +20,7 @@ Now, I’m no devops engineer, but as a full-stack engineer I’m heavily involv
 
 - At the highest level, you can choose a region to deploy your AKS cluster and a plan to bill the running time to, and get spinning up in no time. You can also be as intricate as you want, getting down and dirty with geo-replication, node resource limits, private virtual networks, and so on and so forth. The configuration is endless so I can’t sum it up in a concise paragraph.
 
-**Can I get a `js*kubectl` on my command line and work in "pure" Kube?**
+**Can I get a `kubectl` on my command line and work in "pure" Kube?**
 
 - Of course, depending on how access control is set up for your cluster, you can do this with SSH keys, your Microsoft account via the Azure CLI, or other ways. A great way to handle this is using your existing [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) and [Azure RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) (Role-Based Access Control) to keep things safe and secure, while allowing easier role administration for your team members.
 

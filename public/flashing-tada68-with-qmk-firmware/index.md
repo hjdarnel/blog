@@ -22,9 +22,9 @@ Let's discuss how I ended up fixing it, flashing a QMK firmware onto the keyboar
 
 ## Compiling
 
-First things first, you need to [setup a QMK environment](https://docs.qmk.fm/#/newbs_getting_started) and build a keymap. I ended up using my Mac for this, which just involved running `js*brew qmk/qmk/qmk` and waiting a _very_ long time (around 15 minutes). I then ran `js*qmk setup` to set up my local QMK directory.
+First things first, you need to [setup a QMK environment](https://docs.qmk.fm/#/newbs_getting_started) and build a keymap. I ended up using my Mac for this, which just involved running `brew qmk/qmk/qmk{:sh}` and waiting a _very_ long time (around 15 minutes). I then ran `qmk setup` to set up my local QMK directory.
 
-To compile the firmware, I simply ran `js*qmk compile -kb tada68 -km via`. Note the flags here: `js*-kb` to target the TADA68 keyboard and `js*-km` to target the `via` keymapping. This keymapping has VIA compatability enabled, so we can just reconfigure in-app.
+To compile the firmware, I simply ran `qmk compile -kb tada68 -km via`. Note the flags here: `-kb` to target the TADA68 keyboard and `-km` to target the `via` keymapping. This keymapping has VIA compatability enabled, so we can just reconfigure in-app.
 
 Once the firmware is compiled, we'll have a `.bin` file at the root of the QMK directory. This is in contrast to AVR-bootloader keymaps, which generally end with `.hex`. The TADA68 comes programmed with a LUFA bootloader which is different in... ways. In practice, this means we can use QMK firmware to generate a keymap/firmware, but it should be loaded differently and _carefully_.
 
@@ -34,7 +34,7 @@ In my experience, I needed to send the `bin` file to my Windows PC, plug it in, 
 
 **_NOTE:_ do _not_ eject the keyboard.** Ejecting the keyboard has a high likelyhood of bricking it. Instead, press the escape key. The keyboard should stop flashing, unmount itself from Windows and immediately be operable.
 
-For Linux and MacOS you should be able to similarly `js*cp` the `bin`, but be extremely careful to not include additional files in the volume -- best to `js*ls -la` and delete anything additional (like `.DS_Store`, ghost files, etc) _before unmounting the board._
+For Linux and MacOS you should be able to similarly `cp` the `bin`, but be extremely careful to not include additional files in the volume -- best to `ls -la` and delete anything additional (like `.DS_Store`, ghost files, etc) _before unmounting the board._
 
 ## Fin
 

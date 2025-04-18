@@ -6,7 +6,7 @@ spoiler: How to run a script on a schedule, even through sleep mode
 
 I recently started working in a hybrid role again, where I work two or three days in-office. For the first time in years, I found myself to be the guy with his laptop sound on when in the workplace.
 
-Of course I have most notification sounds turned off, but every now and then a noise will play unexpectedly. It only took this happening twice before I wanted to automatically mute my laptop every morning. Here's how I set a script to launch
+Of course I have most notification sounds turned off, but every now and then a noise will play unexpectedly. It only took this happening twice before I wanted to automatically mute my laptop every morning. Here's how I set up this script.
 
 ---
 
@@ -54,6 +54,6 @@ To make changes to the job, you have to `launchctl unload ~/Library/LaunchAgents
 
 ## Generating a plist another way
 
-Instead of blindly using my plist and adapting it as needed, you may want to write your own and use one of the many plist parameters.
+Instead of blindly using my plist and adapting it as needed, you may want to write your own and use one of the [many plist parameters.](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html#//apple_ref/doc/uid/10000172i-SW7-104142-BCICCCFI)
 
 While researching I came across this [cool tool for generating plists](https://launched.zerowidth.com/). You may find it helpful as well!
