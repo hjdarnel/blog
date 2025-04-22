@@ -9,7 +9,7 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <>
-      <div className="py-4 mb-4 px-4 border-2 rounded border-gray-300 dark:border-gray-700">
+      <div className="py-4 mb-8 px-4 border-2 rounded border-gray-300 dark:border-gray-700">
         <p>
           A technical blog by{" "}
           <Link
