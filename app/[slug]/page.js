@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Link from "../Link";
 import { sans } from "../fonts";
-import { PreWithClipboard, CodeWithClipboard } from "../CopyToClipboard";
+import { PreWithClipboard } from "../CopyToClipboard";
 import remarkSmartpants from "remark-smartypants";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
@@ -12,6 +12,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { remarkMdxEvalCodeBlock } from "./mdx.js";
 import overnight from "overnight/themes/Overnight-Slumber.json";
 import "./markdown.css";
+import remarkGfm from "remark-gfm";
 
 overnight.colors["editor.background"] = "var(--code-bg)";
 
@@ -68,6 +69,7 @@ export default async function PostPage({ params }) {
                   useDynamicImport: true,
                   remarkPlugins: [
                     remarkSmartpants,
+                    remarkGfm,
                     [remarkMdxEvalCodeBlock, filename],
                   ],
                   rehypePlugins: [

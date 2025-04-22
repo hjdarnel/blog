@@ -5,6 +5,9 @@ import { Feed } from "feed";
 export const metadata = {
   title: "overly enthusiastic - henry darnell",
   description: "A blog by Henry darnell",
+  openGraph: {
+    title: "overly enthusiastic",
+  },
 };
 
 export async function getPosts() {
