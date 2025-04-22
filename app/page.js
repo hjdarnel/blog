@@ -9,7 +9,7 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <>
-      <div className="pb-10">
+      <div className="py-4 mb-4 px-4 border-2 rounded border-gray-300 dark:border-gray-700">
         <p>
           A technical blog by{" "}
           <Link
@@ -22,7 +22,7 @@ export default async function Home() {
           about some of them here.
         </p>
       </div>
-      <div className="relative -top-[10px] flex flex-col gap-8">
+      <div className="relative  flex flex-col gap-8">
         {posts.map((post) => (
           <Link
             key={post.slug}
