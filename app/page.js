@@ -2,6 +2,7 @@ import Link from "./Link";
 import Color from "colorjs.io";
 import { metadata, getPosts } from "./posts";
 import { sans } from "./fonts";
+import Script from "next/script";
 
 export { metadata };
 
@@ -9,6 +10,22 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <>
+      <Script
+        id="ld-json"
+        strategy="beforeInteractive"
+        type="application/ld+json"
+      >
+        {`{
+          "@context": "http://schema.org",
+          "@type": "Blog",
+          "name": "Overly Enthusiastic",
+          "headline": "Overly Enthusiastic",
+          "description": "Sometimes I stay up too late thinking about silly things. I'll write about some of them here.",
+          "datePublished": "${posts.at(-1).date}",
+          "dateModified": "${posts[0].date}",
+          "author": "Henry Darnell",
+        }`}
+      </Script>
       <div className="py-4 mb-8 px-4 border-2 rounded border-gray-300 dark:border-gray-700">
         <p>
           A technical blog by{" "}
