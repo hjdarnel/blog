@@ -13,6 +13,7 @@ import { remarkMdxEvalCodeBlock } from "./mdx.js";
 import overnight from "overnight/themes/Overnight-Slumber.json";
 import "./markdown.css";
 import remarkGfm from "remark-gfm";
+import Script from "next/script";
 
 overnight.colors["editor.background"] = "var(--code-bg)";
 
@@ -30,8 +31,23 @@ export default async function PostPage({ params }) {
   }
   let Wrapper = postComponents.Wrapper ?? Fragment;
   const { content, data } = matter(file);
+
   return (
     <>
+      <Script
+        id="ld-json"
+        strategy="beforeInteractive"
+        type="application/ld+json"
+      >
+        {`{
+          "@context": "http://schema.org",
+          "@type": "BlogPosting",
+          "headline": "${data.title}",
+          "description": "${data.spoiler}",
+          "datePublished": "${data.date}",
+          "author": "Henry Darnell",
+        }`}
+      </Script>
       <article>
         <h1
           className={[
@@ -42,6 +58,7 @@ export default async function PostPage({ params }) {
           {data.title}
         </h1>
         <p className="mt-2 text-[13px] text-gray-700 dark:text-gray-300">
+          Posted on{" "}
           {new Date(data.date).toLocaleDateString("en", {
             day: "numeric",
             month: "long",
