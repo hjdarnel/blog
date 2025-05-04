@@ -7,3 +7,5 @@ export const UmamiAnalytics = () => {
   }
   return <Script async src="https://umami.hjdarnel.dev/script.js" data-website-id={websiteId} />
 }
+
+export default UmamiAnalytics
