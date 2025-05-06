@@ -23,7 +23,7 @@ export default async function Home() {
           "description": "Sometimes I stay up too late thinking about tech and falling down rabbit holes. I'll document some of the more interesting things here",
           "datePublished": "${posts.at(-1).date}",
           "dateModified": "${posts[0].date}",
-          "author": "Henry Darnell",
+          "author": "Henry Darnell"
         }`}
       </Script>
       <div className="py-4 mb-8 px-4 border-2 rounded border-gray-300 dark:border-gray-700">

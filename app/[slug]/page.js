@@ -45,7 +45,7 @@ export default async function PostPage({ params }) {
           "headline": "${data.title}",
           "description": "${data.spoiler}",
           "datePublished": "${data.date}",
-          "author": "Henry Darnell",
+          "author": "Henry Darnell"
         }`}
       </Script>
       <article>
