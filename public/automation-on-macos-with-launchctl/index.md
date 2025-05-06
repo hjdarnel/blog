@@ -1,7 +1,7 @@
 ---
 title: 'Scheduled jobs on macOS with launchd'
 date: '2025-04-18'
-spoiler: How to run a script on a schedule, even through sleep mode
+spoiler: How to run a script on a schedule, even on a laptop, and through sleep mode
 ---
 
 I recently started working in a hybrid role again, where I work two or three days in-office. For the first time in years, I found myself to be the guy with his laptop sound on when in the workplace.

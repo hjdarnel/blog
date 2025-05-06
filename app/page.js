@@ -20,7 +20,7 @@ export default async function Home() {
           "@type": "Blog",
           "name": "Overly Enthusiastic",
           "headline": "Overly Enthusiastic",
-          "description": "Sometimes I stay up too late thinking about silly things. I'll write about some of them here.",
+          "description": "Sometimes I stay up too late thinking about tech and falling down rabbit holes. I'll document some of the more interesting things here",
           "datePublished": "${posts.at(-1).date}",
           "dateModified": "${posts[0].date}",
           "author": "Henry Darnell",
@@ -35,8 +35,8 @@ export default async function Home() {
           >
             Henry Darnell
           </Link>
-          . Sometimes I stay up too late thinking about silly things. I'll write
-          about some of them here.
+          . Sometimes I stay up too late thinking about tech and falling down
+          rabbit holes. I'll document some of the more interesting things here.
         </p>
       </div>
       <div className="relative  flex flex-col gap-8">
