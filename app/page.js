@@ -48,7 +48,6 @@ export default async function Home() {
           >
             <article>
               <PostTitle post={post} />
-              <PostMeta post={post} />
               <PostSubtitle post={post} />
             </article>
           </Link>
@@ -84,18 +83,6 @@ function PostTitle({ post }) {
     >
       {post.title}
     </h2>
-  );
-}
-
-function PostMeta({ post }) {
-  return (
-    <p className="text-[13px] text-gray-700 dark:text-gray-300">
-      {new Date(post.date).toLocaleDateString("en", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      })}
-    </p>
   );
 }
 

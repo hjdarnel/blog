@@ -57,14 +57,6 @@ export default async function PostPage({ params }) {
         >
           {data.title}
         </h1>
-        <p className="mt-2 text-[13px] text-gray-700 dark:text-gray-300">
-          Posted on{" "}
-          {new Date(data.date).toLocaleDateString("en", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
-        </p>
         <div className="markdown mt-10">
           <Wrapper>
             <MDXRemote
