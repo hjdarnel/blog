@@ -4,9 +4,14 @@ import { Feed } from "feed";
 
 export const metadata = {
   title: "overly enthusiastic - henry darnell",
-  description: "A blog by Henry darnell",
+  description: "A blog by Henry Darnell",
   openGraph: {
     title: "overly enthusiastic",
+    description: "A blog by Henry Darnell",
+    siteName: "overly enthusiastic",
+    url: "https://blog.darnell.io",
+    locale: 'en_US',
+    type: 'website'
   },
 };
 
